@@ -1,10 +1,12 @@
 package com.example.appupdatechecker
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -21,14 +23,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         private const val PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE = 1
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         context = this@MainActivity
-    }
 
-    init{
         try {
             val packageInfo = packageManager.getPackageInfo(packageName, 0)
             version = packageInfo.versionName
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         binding.txtVersionName.text = version
+        binding.btnUpdateApp.text = "Latest App"
     }
 
     private fun checkWriteExternalStoragePermission() {
