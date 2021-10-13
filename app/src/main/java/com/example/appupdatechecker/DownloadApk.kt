@@ -27,7 +27,7 @@ import java.net.URL
 class DownloadApk(var context: Context) : AppCompatActivity() {
 
     @JvmOverloads
-    fun startDownloadingApk(url: String, fileName: String = getString(R.string.app_name)) {
+    fun startDownloadingApk(url: String, fileName: String = "AppUpdateChecker") {
         if (URLUtil.isValidUrl(url)) {
             DownloadNewVersion(context, url, fileName).execute()
         }

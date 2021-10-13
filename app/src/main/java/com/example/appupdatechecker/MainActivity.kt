@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         binding.txtVersionName.text = version
-        binding.btnUpdateApp.text = "Latest App"
+        binding.btnUpdateApp.setOnClickListener(this)
     }
 
     private fun checkWriteExternalStoragePermission() {
@@ -96,10 +96,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun downloadUpdate() {
         // This @DownloadApk class is provided by our library
         // Pass the Context when creating object of DownloadApk
-        val downloadApk = DownloadApk(this@MainActivity)
+        val downloadApk = DownloadApk(context)
 
         // For starting download call the method startDownloadingApk() by passing the URL and the optional filename
-        downloadApk.startDownloadingApk("https://github.com/Piashsarker/AndroidAppUpdateLibrary/blob/master/app-debug.apk")
+        downloadApk.startDownloadingApk("https://github.com/bhattmeet/AppUpdateChecker/blob/main/app-debug.apk")
     }
 
     override fun onClick(v: View?) {

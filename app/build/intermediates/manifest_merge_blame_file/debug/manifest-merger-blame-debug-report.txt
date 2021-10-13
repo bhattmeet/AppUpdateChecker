@@ -2,7 +2,7 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.example.appupdatechecker"
 4    android:versionCode="1"
-5    android:versionName="2.0" >
+5    android:versionName="1.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
@@ -10,51 +10,80 @@
 9        android:targetSdkVersion="30" />
 9-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml
 10
-11    <application
-11-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:5:5-21:19
-12        android:allowBackup="true"
-12-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.6.0] /Users/meetbhatt/.gradle/caches/transforms-3/7cabb0b7df62f3b93c656c79795a54ee/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:7:9-43
-16        android:label="@string/app_name"
-16-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:8:9-41
-17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:9:9-54
-18        android:supportsRtl="true"
-18-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:10:9-35
-19        android:theme="@style/Theme.AppUpdateChecker" >
-19-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:11:9-54
-20        <activity
-20-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:12:9-20:20
-21            android:name="com.example.appupdatechecker.MainActivity"
-21-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:13:13-41
-22            android:exported="true" >
-22-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:14:13-36
-23            <intent-filter>
-23-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:15:13-19:29
-24                <action android:name="android.intent.action.MAIN" />
-24-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:16:17-69
-24-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:16:25-66
-25
-26                <category android:name="android.intent.category.LAUNCHER" />
-26-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:18:17-77
-26-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:18:27-74
-27            </intent-filter>
-28        </activity>
-29
-30        <provider
-30-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
-31            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-31-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
-32            android:authorities="com.example.appupdatechecker.lifecycle-process"
-32-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
-33            android:exported="false"
-33-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
-34            android:multiprocess="true" />
-34-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
-35    </application>
-36
-37</manifest>
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:6:5-81
+12-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:6:22-78
+13    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+13-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:7:5-83
+13-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:7:22-80
+14
+15    <application
+15-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:9:5-37:19
+16        android:allowBackup="true"
+16-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:10:9-35
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.6.0] /Users/meetbhatt/.gradle/caches/transforms-3/7cabb0b7df62f3b93c656c79795a54ee/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+18        android:debuggable="true"
+19        android:icon="@mipmap/ic_launcher"
+19-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:11:9-43
+20        android:label="@string/app_name"
+20-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:12:9-41
+21        android:requestLegacyExternalStorage="true"
+21-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:16:9-52
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:13:9-54
+23        android:supportsRtl="true"
+23-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:14:9-35
+24        android:testOnly="true"
+25        android:theme="@style/Theme.AppUpdateChecker" >
+25-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:15:9-54
+26        <activity
+26-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:17:9-25:20
+27            android:name="com.example.appupdatechecker.MainActivity"
+27-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:18:13-41
+28            android:exported="true" >
+28-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:19:13-36
+29            <intent-filter>
+29-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:20:13-24:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:21:17-69
+30-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:21:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:23:17-77
+32-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:23:27-74
+33            </intent-filter>
+34        </activity>
+35
+36        <provider
+37            android:name="androidx.core.content.FileProvider"
+37-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:28:13-62
+38            android:authorities="com.example.appupdatechecker.provider"
+38-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:29:13-60
+39            android:exported="false"
+39-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:30:13-37
+40            android:grantUriPermissions="true" >
+40-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:31:13-47
+41            <meta-data
+41-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:32:13-34:57
+42                android:name="android.support.FILE_PROVIDER_PATHS"
+42-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:33:17-67
+43                android:resource="@xml/provider_paths" />
+43-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:34:17-55
+44        </provider>
+45        <provider
+45-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+46            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+46-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+47            android:authorities="com.example.appupdatechecker.lifecycle-process"
+47-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+48            android:exported="false"
+48-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+49            android:multiprocess="true" />
+49-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+50    </application>
+51
+52</manifest>
