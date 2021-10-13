@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AppUpdateChecker</string>
+    <string name="update_your_application">Update your application</string>
+</resources>
