@@ -7,7 +7,7 @@ public final class MainActivity extends androidx.appcompat.app.AppCompatActivity
     private com.example.appupdatechecker.databinding.ActivityMainBinding binding;
     private android.content.Context context;
     private java.lang.String version = "";
-    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
     public static final com.example.appupdatechecker.MainActivity.Companion Companion = null;
     private static final int PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
     
@@ -16,8 +16,8 @@ public final class MainActivity extends androidx.appcompat.app.AppCompatActivity
     }
     
     @android.annotation.SuppressLint(value = {"SetTextI18n"})
-    @java.lang.Override
-    protected void onCreate(@org.jetbrains.annotations.Nullable
+    @java.lang.Override()
+    protected void onCreate(@org.jetbrains.annotations.Nullable()
     android.os.Bundle savedInstanceState) {
     }
     
@@ -27,9 +27,9 @@ public final class MainActivity extends androidx.appcompat.app.AppCompatActivity
     private final void requestWriteExternalStoragePermission() {
     }
     
-    @java.lang.Override
-    public void onRequestPermissionsResult(int requestCode, @org.jetbrains.annotations.NotNull
-    java.lang.String[] permissions, @org.jetbrains.annotations.NotNull
+    @java.lang.Override()
+    public void onRequestPermissionsResult(int requestCode, @org.jetbrains.annotations.NotNull()
+    java.lang.String[] permissions, @org.jetbrains.annotations.NotNull()
     int[] grantResults) {
     }
     
@@ -39,8 +39,8 @@ public final class MainActivity extends androidx.appcompat.app.AppCompatActivity
     private final void downloadUpdate() {
     }
     
-    @java.lang.Override
-    public void onClick(@org.jetbrains.annotations.Nullable
+    @java.lang.Override()
+    public void onClick(@org.jetbrains.annotations.Nullable()
     android.view.View v) {
     }
     

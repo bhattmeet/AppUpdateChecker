@@ -20,10 +20,6 @@ import java.net.HttpURLConnection
 import java.net.MalformedURLException
 import java.net.URL
 
-/**
- * Created by piashsarker on 1/16/18, rewritten by Cyb3rKo on 12/21/20.
- */
-
 class DownloadApk(var context: Context) : AppCompatActivity() {
 
     @JvmOverloads
@@ -33,12 +29,15 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
         }
     }
 
+    /*This method is use for download new version
+     */
     @SuppressLint("StaticFieldLeak")
     private class DownloadNewVersion(
         val context: Context,
         val downloadUrl: String,
         val fileName: String
-    ): AsyncTask<String, Int, Boolean>() {
+    )
+        : AsyncTask<String, Int, Boolean>() {
         private lateinit var bar: ProgressDialog
         override fun onPreExecute() {
             super.onPreExecute()
@@ -117,7 +116,6 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
 
         override fun onPostExecute(result: Boolean?) {
             super.onPostExecute(result)
-            Log.e("test","Result: $result")
             bar.dismiss()
             if (result!!) {
                 Toast.makeText(context, "Update Done", Toast.LENGTH_SHORT).show()
@@ -126,6 +124,8 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
             }
         }
 
+        /*This method is use for install new version of app
+        */
         private fun openNewVersion(location: String) {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.setDataAndType(
@@ -138,12 +138,9 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
         }
 
         private fun getUriFromFile(filePath: String): Uri {
-            Log.e("test","Package Name: ${context.packageName}")
             return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
-                Log.e("test","File N: $filePath")
                 Uri.fromFile(File(filePath))
             } else {
-                Log.e("test","File: $filePath")
                 FileProvider.getUriForFile(
                     context,
                     context.packageName + ".provider",

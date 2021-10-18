@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "775665258250",
+    "project_id": "appupdatechecker-93aae",
+    "storage_bucket": "appupdatechecker-93aae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775665258250:android:bffd3fd64b30710d59f4f3",
+        "android_client_info": {
+          "package_name": "com.example.appupdatechecker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775665258250-vr2bhvtm1mmbufdih93uvd72distj4hg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCxhT7wGfzBDT2hkviT9fr7bnHksOjCjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "775665258250-vr2bhvtm1mmbufdih93uvd72distj4hg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

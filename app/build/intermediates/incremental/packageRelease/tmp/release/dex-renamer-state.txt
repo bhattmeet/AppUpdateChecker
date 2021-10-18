@@ -1,4 +1,4 @@
-#Wed Oct 13 18:08:25 IST 2021
+#Mon Oct 18 10:48:39 IST 2021
 base.0=/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

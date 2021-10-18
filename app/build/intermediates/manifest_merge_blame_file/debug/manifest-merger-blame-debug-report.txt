@@ -20,70 +20,138 @@
 13-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:7:5-83
 13-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:7:22-80
 14
-15    <application
-15-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:9:5-37:19
-16        android:allowBackup="true"
-16-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:10:9-35
-17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-17-->[androidx.core:core:1.6.0] /Users/meetbhatt/.gradle/caches/transforms-3/7cabb0b7df62f3b93c656c79795a54ee/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
-18        android:debuggable="true"
-19        android:icon="@mipmap/ic_launcher"
-19-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:11:9-43
-20        android:label="@string/app_name"
-20-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:12:9-41
-21        android:requestLegacyExternalStorage="true"
-21-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:16:9-52
-22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:13:9-54
-23        android:supportsRtl="true"
-23-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:14:9-35
-24        android:testOnly="true"
-25        android:theme="@style/Theme.AppUpdateChecker" >
-25-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:15:9-54
-26        <activity
-26-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:17:9-25:20
-27            android:name="com.example.appupdatechecker.MainActivity"
-27-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:18:13-41
-28            android:exported="true" >
-28-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:19:13-36
-29            <intent-filter>
-29-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:20:13-24:29
-30                <action android:name="android.intent.action.MAIN" />
-30-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:21:17-69
-30-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:21:25-66
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:23:17-77
-32-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:23:27-74
-33            </intent-filter>
-34        </activity>
-35
-36        <provider
-37            android:name="androidx.core.content.FileProvider"
-37-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:28:13-62
-38            android:authorities="com.example.appupdatechecker.provider"
-38-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:29:13-60
-39            android:exported="false"
-39-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:30:13-37
-40            android:grantUriPermissions="true" >
-40-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:31:13-47
-41            <meta-data
-41-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:32:13-34:57
-42                android:name="android.support.FILE_PROVIDER_PATHS"
-42-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:33:17-67
-43                android:resource="@xml/provider_paths" />
-43-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:34:17-55
-44        </provider>
-45        <provider
-45-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
-46            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-46-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
-47            android:authorities="com.example.appupdatechecker.lifecycle-process"
-47-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
-48            android:exported="false"
-48-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
-49            android:multiprocess="true" />
-49-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/d021bec982e8e10b97ccac4f686ff33c/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
-50    </application>
+15    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+16    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.firebase:firebase-storage:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/9af129705d5cedb83c845937114a6756/transformed/jetified-firebase-storage-20.0.0/AndroidManifest.xml:26:5-79
+17-->[com.google.firebase:firebase-storage:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/9af129705d5cedb83c845937114a6756/transformed/jetified-firebase-storage-20.0.0/AndroidManifest.xml:26:22-76
+18
+19    <application
+19-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:9:5-39:19
+20        android:allowBackup="true"
+20-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:10:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.6.0] /Users/meetbhatt/.gradle/caches/transforms-3/bc45a61edf56957ab466c3cc91727254/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+22        android:debuggable="true"
+23        android:icon="@mipmap/ic_launcher"
+23-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:11:9-43
+24        android:label="@string/app_name"
+24-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:12:9-41
+25        android:networkSecurityConfig="@xml/network_security_config"
+25-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:17:9-69
+26        android:requestLegacyExternalStorage="true"
+26-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:16:9-52
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:13:9-54
+28        android:supportsRtl="true"
+28-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:14:9-35
+29        android:testOnly="true"
+30        android:theme="@style/Theme.AppUpdateChecker"
+30-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:15:9-54
+31        android:usesCleartextTraffic="true" >
+31-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:18:9-44
+32        <activity
+32-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:19:9-27:20
+33            android:name="com.example.appupdatechecker.MainActivity"
+33-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:20:13-41
+34            android:exported="true" >
+34-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:21:13-36
+35            <intent-filter>
+35-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:22:13-26:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:23:17-69
+36-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:23:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:25:17-77
+38-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:25:27-74
+39            </intent-filter>
+40        </activity>
+41
+42        <provider
+43            android:name="androidx.core.content.FileProvider"
+43-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:30:13-62
+44            android:authorities="com.example.appupdatechecker.provider"
+44-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:31:13-60
+45            android:exported="false"
+45-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:32:13-37
+46            android:grantUriPermissions="true" >
+46-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:33:13-47
+47            <meta-data
+47-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:34:13-36:57
+48                android:name="android.support.FILE_PROVIDER_PATHS"
+48-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:35:17-67
+49                android:resource="@xml/provider_paths" />
+49-->/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/AndroidManifest.xml:36:17-55
+50        </provider>
 51
-52</manifest>
+52        <service
+52-->[com.google.firebase:firebase-storage-ktx:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ba3a3d8cdff0fb71e8931b69f64379f0/transformed/jetified-firebase-storage-ktx-20.0.0/AndroidManifest.xml:12:9-18:19
+53            android:name="com.google.firebase.components.ComponentDiscoveryService"
+53-->[com.google.firebase:firebase-storage-ktx:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ba3a3d8cdff0fb71e8931b69f64379f0/transformed/jetified-firebase-storage-ktx-20.0.0/AndroidManifest.xml:13:13-84
+54            android:directBootAware="true"
+54-->[com.google.firebase:firebase-common:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ddf75874fb8fdb7126d3f279b4e541fa/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+55            android:exported="false" >
+55-->[com.google.firebase:firebase-storage-ktx:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ba3a3d8cdff0fb71e8931b69f64379f0/transformed/jetified-firebase-storage-ktx-20.0.0/AndroidManifest.xml:14:13-37
+56            <meta-data
+56-->[com.google.firebase:firebase-storage-ktx:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ba3a3d8cdff0fb71e8931b69f64379f0/transformed/jetified-firebase-storage-ktx-20.0.0/AndroidManifest.xml:15:13-17:85
+57                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
+57-->[com.google.firebase:firebase-storage-ktx:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ba3a3d8cdff0fb71e8931b69f64379f0/transformed/jetified-firebase-storage-ktx-20.0.0/AndroidManifest.xml:16:17-122
+58                android:value="com.google.firebase.components.ComponentRegistrar" />
+58-->[com.google.firebase:firebase-storage-ktx:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ba3a3d8cdff0fb71e8931b69f64379f0/transformed/jetified-firebase-storage-ktx-20.0.0/AndroidManifest.xml:17:17-82
+59            <meta-data
+59-->[com.google.firebase:firebase-common-ktx:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/893ba6dc734555805e60b1c9b09ff832/transformed/jetified-firebase-common-ktx-20.0.0/AndroidManifest.xml:15:13-17:85
+60                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+60-->[com.google.firebase:firebase-common-ktx:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/893ba6dc734555805e60b1c9b09ff832/transformed/jetified-firebase-common-ktx-20.0.0/AndroidManifest.xml:16:17-113
+61                android:value="com.google.firebase.components.ComponentRegistrar" />
+61-->[com.google.firebase:firebase-common-ktx:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/893ba6dc734555805e60b1c9b09ff832/transformed/jetified-firebase-common-ktx-20.0.0/AndroidManifest.xml:17:17-82
+62            <meta-data
+62-->[com.google.firebase:firebase-storage:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/9af129705d5cedb83c845937114a6756/transformed/jetified-firebase-storage-20.0.0/AndroidManifest.xml:33:13-35:85
+63                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+63-->[com.google.firebase:firebase-storage:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/9af129705d5cedb83c845937114a6756/transformed/jetified-firebase-storage-20.0.0/AndroidManifest.xml:34:17-107
+64                android:value="com.google.firebase.components.ComponentRegistrar" />
+64-->[com.google.firebase:firebase-storage:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/9af129705d5cedb83c845937114a6756/transformed/jetified-firebase-storage-20.0.0/AndroidManifest.xml:35:17-82
+65        </service>
+66
+67        <provider
+67-->[com.google.firebase:firebase-common:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ddf75874fb8fdb7126d3f279b4e541fa/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+68            android:name="com.google.firebase.provider.FirebaseInitProvider"
+68-->[com.google.firebase:firebase-common:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ddf75874fb8fdb7126d3f279b4e541fa/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+69            android:authorities="com.example.appupdatechecker.firebaseinitprovider"
+69-->[com.google.firebase:firebase-common:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ddf75874fb8fdb7126d3f279b4e541fa/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+70            android:directBootAware="true"
+70-->[com.google.firebase:firebase-common:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ddf75874fb8fdb7126d3f279b4e541fa/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+71            android:exported="false"
+71-->[com.google.firebase:firebase-common:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ddf75874fb8fdb7126d3f279b4e541fa/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+72            android:initOrder="100" />
+72-->[com.google.firebase:firebase-common:20.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/ddf75874fb8fdb7126d3f279b4e541fa/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+73
+74        <activity
+74-->[com.google.android.gms:play-services-base:17.1.0] /Users/meetbhatt/.gradle/caches/transforms-3/7071acaf34e7d3423d522ebc983edebe/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+75            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+75-->[com.google.android.gms:play-services-base:17.1.0] /Users/meetbhatt/.gradle/caches/transforms-3/7071acaf34e7d3423d522ebc983edebe/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+76            android:exported="false"
+76-->[com.google.android.gms:play-services-base:17.1.0] /Users/meetbhatt/.gradle/caches/transforms-3/7071acaf34e7d3423d522ebc983edebe/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+77            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+77-->[com.google.android.gms:play-services-base:17.1.0] /Users/meetbhatt/.gradle/caches/transforms-3/7071acaf34e7d3423d522ebc983edebe/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+78
+79        <meta-data
+79-->[com.google.android.gms:play-services-basement:17.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/e2d7df644da1317f2a6ac8db9f315cdf/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+80            android:name="com.google.android.gms.version"
+80-->[com.google.android.gms:play-services-basement:17.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/e2d7df644da1317f2a6ac8db9f315cdf/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+81            android:value="@integer/google_play_services_version" />
+81-->[com.google.android.gms:play-services-basement:17.0.0] /Users/meetbhatt/.gradle/caches/transforms-3/e2d7df644da1317f2a6ac8db9f315cdf/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+82
+83        <provider
+83-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/5df9584f4c58778d216a456fd805e57a/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+84            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+84-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/5df9584f4c58778d216a456fd805e57a/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+85            android:authorities="com.example.appupdatechecker.lifecycle-process"
+85-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/5df9584f4c58778d216a456fd805e57a/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+86            android:exported="false"
+86-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/5df9584f4c58778d216a456fd805e57a/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+87            android:multiprocess="true" />
+87-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/meetbhatt/.gradle/caches/transforms-3/5df9584f4c58778d216a456fd805e57a/transformed/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+88    </application>
+89
+90</manifest>

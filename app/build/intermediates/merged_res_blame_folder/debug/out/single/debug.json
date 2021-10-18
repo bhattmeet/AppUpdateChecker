@@ -24,6 +24,10 @@
         "source": "/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
+        "merged": "/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/build/intermediates/merged_res/debug/xml_network_security_config.xml.flat",
+        "source": "/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/res/xml/network_security_config.xml"
+    },
+    {
         "merged": "/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/build/intermediates/merged_res/debug/xml_provider_paths.xml.flat",
         "source": "/Users/meetbhatt/Documents/GitHub/AppUpdateChecker/app/src/main/res/xml/provider_paths.xml"
     },

@@ -6,11 +6,9 @@ import android.content.Context
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.databinding.DataBindingUtil
 import com.example.appupdatechecker.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -41,6 +39,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnUpdateApp.setOnClickListener(this)
     }
 
+    /*This method is use for check write external storage permissions
+     */
     private fun checkWriteExternalStoragePermission() {
         if (ActivityCompat.checkSelfPermission(
                 this@MainActivity,
@@ -55,6 +55,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    /*This method is use for request write external storage permissions from user
+     */
     private fun requestWriteExternalStoragePermission() {
         if (ActivityCompat.checkSelfPermission(
                 this@MainActivity,
@@ -75,6 +77,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    /*This method is use for get permissions result
+     */
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
@@ -93,13 +97,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         checkWriteExternalStoragePermission()
     }
 
+    /*This method is use for download update
+     */
     private fun downloadUpdate() {
-        // This @DownloadApk class is provided by our library
-        // Pass the Context when creating object of DownloadApk
+        // Pass the Context of DownloadApk class when creating object of DownloadApk
         val downloadApk = DownloadApk(context)
 
         // For starting download call the method startDownloadingApk() by passing the URL and the optional filename
-        downloadApk.startDownloadingApk("https://github.com/bhattmeet/AppUpdateChecker/blob/main/app-debug.apk")
+        downloadApk.startDownloadingApk("https://firebasestorage.googleapis.com/v0/b/appupdatechecker-93aae.appspot.com/o/AppUpdateChecker.apk?alt=media&token=5e5444e0-d53f-4c35-a3e0-86a7cca5b193")
     }
 
     override fun onClick(v: View?) {
