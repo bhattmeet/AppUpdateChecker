@@ -29,7 +29,8 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
         }
     }
 
-    /*This method is use for download new version
+    /**
+     * This method is use for download new version
      */
     @SuppressLint("StaticFieldLeak")
     private class DownloadNewVersion(
@@ -124,7 +125,8 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
             }
         }
 
-        /*This method is use for install new version of app
+        /**
+         * This method is use for install new version of app
         */
         private fun openNewVersion(location: String) {
             val intent = Intent(Intent.ACTION_VIEW)

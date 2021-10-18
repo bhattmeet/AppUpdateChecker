@@ -39,7 +39,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnUpdateApp.setOnClickListener(this)
     }
 
-    /*This method is use for check write external storage permissions
+    /**
+     * This method is use for check write external storage permissions
      */
     private fun checkWriteExternalStoragePermission() {
         if (ActivityCompat.checkSelfPermission(
@@ -55,7 +56,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    /*This method is use for request write external storage permissions from user
+    /**
+     * This method is use for request write external storage permissions from user
      */
     private fun requestWriteExternalStoragePermission() {
         if (ActivityCompat.checkSelfPermission(
@@ -77,7 +79,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    /*This method is use for get permissions result
+    /**
+     * This method is use for get permissions result
      */
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -97,7 +100,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         checkWriteExternalStoragePermission()
     }
 
-    /*This method is use for download update
+    /**
+     * This method is use for download update
      */
     private fun downloadUpdate() {
         // Pass the Context of DownloadApk class when creating object of DownloadApk
