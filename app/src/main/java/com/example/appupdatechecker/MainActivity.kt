@@ -109,6 +109,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         // For starting download call the method startDownloadingApk() by passing the URL and the optional filename
         downloadApk.startDownloadingApk("https://firebasestorage.googleapis.com/v0/b/appupdatechecker-93aae.appspot.com/o/AppUpdateChecker.apk?alt=media&token=5e5444e0-d53f-4c35-a3e0-86a7cca5b193")
+
+        //For open play store when your app is in PlayStore
+//        downloadApk.launchPlayStore()
     }
 
     override fun onClick(v: View?) {

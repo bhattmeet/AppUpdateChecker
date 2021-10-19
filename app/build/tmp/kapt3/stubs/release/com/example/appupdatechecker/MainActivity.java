@@ -21,12 +21,21 @@ public final class MainActivity extends androidx.appcompat.app.AppCompatActivity
     android.os.Bundle savedInstanceState) {
     }
     
+    /**
+     * This method is use for check write external storage permissions
+     */
     private final void checkWriteExternalStoragePermission() {
     }
     
+    /**
+     * This method is use for request write external storage permissions from user
+     */
     private final void requestWriteExternalStoragePermission() {
     }
     
+    /**
+     * This method is use for get permissions result
+     */
     @java.lang.Override()
     public void onRequestPermissionsResult(int requestCode, @org.jetbrains.annotations.NotNull()
     java.lang.String[] permissions, @org.jetbrains.annotations.NotNull()
@@ -36,6 +45,9 @@ public final class MainActivity extends androidx.appcompat.app.AppCompatActivity
     private final void download() {
     }
     
+    /**
+     * This method is use for download update
+     */
     private final void downloadUpdate() {
     }
     

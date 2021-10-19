@@ -30,6 +30,37 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
     }
 
     /**
+     * It's used to checks user device has Google Play Store installed
+     */
+    private fun isPlayStoreInstalled(): Boolean {
+        val market = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=dummy"))
+        val manager = context.packageManager
+        val list = manager.queryIntentActivities(market, 0)
+        if (list.size > 0) {
+            for (i in list.indices) {
+                if (list[i].activityInfo.packageName.startsWith("com.android.vending")) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
+    /**
+     * This method is use for launches your app's page in Google Play Store if it exist
+     */
+    fun launchPlayStore() {
+        if (isPlayStoreInstalled()) {
+            val marketPage = "market://details?id=" + context.packageName
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(marketPage)
+            context.startActivity(intent)
+        } else {
+            Toast.makeText(context,"Google Play isn't installed on your device.",Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    /**
      * This method is use for download new version
      */
     @SuppressLint("StaticFieldLeak")
@@ -37,8 +68,7 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
         val context: Context,
         val downloadUrl: String,
         val fileName: String
-    )
-        : AsyncTask<String, Int, Boolean>() {
+    ) : AsyncTask<String, Int, Boolean>() {
         private lateinit var bar: ProgressDialog
         override fun onPreExecute() {
             super.onPreExecute()
@@ -61,7 +91,7 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
             }
 
             bar.apply {
-                isIndeterminate  = false
+                isIndeterminate = false
                 max = 100
                 setMessage(msg)
             }
@@ -71,7 +101,9 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
             var flag = false
 
             try {
-                val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/"
+                val path =
+                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                        .toString() + "/"
                 val outputFile = File("$path$fileName.apk")
                 while (outputFile.exists()) {
                     outputFile.delete()
@@ -127,7 +159,7 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
 
         /**
          * This method is use for install new version of app
-        */
+         */
         private fun openNewVersion(location: String) {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.setDataAndType(
